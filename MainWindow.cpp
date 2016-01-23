@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
             QString s = ifs.at(i).hardwareAddress();
             ui->cbNetworkInterface->addItem(s);
-            ui->cbNetworkInterface->setProperty(QString(MAC_PROPERTY_NAME + "%1").arg(ui->cbNetworkInterface->count() - 1).toLocal8Bit(), ifs.at(i).hardwareAddress());
+            ui->cbNetworkInterface->setProperty(QString(MAC_PROPERTY_NAME + "%1").arg(ui->cbNetworkInterface->count() - 1).toLocal8Bit(), s);
         }
     }
 
@@ -42,6 +42,17 @@ void MainWindow::onStartStopClicked() {
         signalParams.setSrcMac(mac);
         signalParams.sampleRate = ui->rb80->isChecked() ? SignalParams::SV_SAMPLE_RATE::SV_SAMPLE_RATE_80 :
                                              SignalParams::SV_SAMPLE_RATE::SV_SAMPLE_RATE_256;
+
+        // We'll define amplitude to make things more interesting
+        signalParams.freq = 50.0;
+        signalParams.Ua_Amplitude =
+                signalParams.Ub_Amplitude =
+                signalParams.Uc_Amplitude =
+                signalParams.Un_Amplitude = 380.0;
+        signalParams.Ia_Amplitude =
+                signalParams.Ib_Amplitude =
+                signalParams.Ic_Amplitude =
+                signalParams.In_Amplitude = 5.0;
 
         if (!generator) {
             generator.reset(new Generator(&generatorStopped, signalParams));

@@ -7,102 +7,111 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>366</height>
+    <height>282</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>StatTrafGen</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>90</y>
-      <width>381</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Частота сэмплирования</string>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QRadioButton" name="rb80">
-       <property name="text">
-        <string>80 точек/период
+   <layout class="QGridLayout" name="gridLayout_3" rowstretch="2,4,1,1,1">
+    <item row="2" column="0" colspan="2">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Сетевой интерфейс</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="cbNetworkInterface"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Частота сэмплирования</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QRadioButton" name="rb80">
+         <property name="text">
+          <string>80 точек/период
 генерация 4000 пакетов в секунду, 1 отсчет/пакет</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QRadioButton" name="rb256">
-       <property name="text">
-        <string>256 точек/период
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QRadioButton" name="rb256">
+         <property name="text">
+          <string>256 точек/период
 генерация 1600 пакетов в секунду, 8 отсчетов/пакет</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>361</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Пример генерации однородного стационарного потока данных на примере протокола IEC61850-9.2LE</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <property name="wordWrap">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="bnStartStop">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>320</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Запуск</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>250</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Сетевой интерфейс</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="cbNetworkInterface">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>250</y>
-      <width>231</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="bnStartStop">
+      <property name="text">
+       <string>Запуск</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>298</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Пример генерации однородного стационарного потока данных на примере протокола IEC61850-9.2LE</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

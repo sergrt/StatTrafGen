@@ -15,7 +15,7 @@ using namespace std;
 void uDelay(int val) {
     if (val > 1000 * 1000 || val == 0)
         return;
-    //// This does not work under MSVC2013 - sleeping too long
+    //// This does not work under windows - sleeping too long
     //std::this_thread::sleep_for(std::chrono::microseconds(val));
     //return;
 
